@@ -13,8 +13,9 @@
               text-gray-900
               dark:text-gray-400
             "
-            >Your new pending task 📋</label
           >
+            {{ task ? "Edit your task  📋" : "Your new pending task 📋" }}
+          </label>
           <textarea
             v-model="taskTitle"
             data-test-new-task-input
@@ -41,6 +42,7 @@
           ></textarea>
           <button
             data-test-new-task-submit
+            data-test-edit-task-input
             @click.prevent="submit"
             type="submit"
             class="
@@ -62,7 +64,7 @@
               dark:focus:ring-slate-800
             "
           >
-            Add Task
+            {{ task ? "Save" : "Add Task" }}
           </button>
           <button
             @click.prevent="cancel"
@@ -94,7 +96,11 @@
 
 <script setup>
 import { ref } from "vue";
-let taskTitle = ref("");
+import Task from "../interfaces/Task";
+const props = defineProps({
+  task: Task,
+});
+let taskTitle = ref(props.task ? props.task.title : "");
 const emit = defineEmits(["submit", "close"]);
 const submit = () => {
   emit("submit", taskTitle.value);
