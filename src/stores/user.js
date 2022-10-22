@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { supabase } from "../supabase";
+import { supabase } from "../supabase.js";
 
 export const useUserStore = defineStore("user", {
   state: () => ({
@@ -30,7 +30,10 @@ export const useUserStore = defineStore("user", {
       if (error) throw error;
       if (user) this.user = user;
     },
-    // Hacer log out
+    async singOut() {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+    },
     persist: {
       enabled: true,
       strategies: [

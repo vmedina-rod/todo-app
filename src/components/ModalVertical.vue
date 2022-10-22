@@ -13,6 +13,7 @@
         <div class="flex justify-center">
           {{ footer }}
           <button
+            data-test-modal-button
             class="
               py-2
               px-10
