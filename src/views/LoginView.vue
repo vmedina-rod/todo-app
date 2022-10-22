@@ -42,6 +42,7 @@
             <label for="email-address" class="sr-only">Email address</label>
             <input
               data-test-input-email
+              v-model="email"
               id="email-address"
               name="email"
               type="email"
@@ -72,6 +73,7 @@
             <label for="password" class="sr-only">Password</label>
             <input
               data-test-input-password
+              v-model="password"
               id="password"
               name="password"
               type="password"
@@ -102,6 +104,7 @@
 
         <div>
           <button
+            @click.prevent="singIn"
             data-test-login-button
             type="submit"
             class="
@@ -133,4 +136,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+import { useUserStore } from "../stores/user";
+
+const userStore = useUserStore();
+
+let email = ref("");
+let password = ref("");
+
+const singIn = async () => {
+  await userStore.singIn(email.value, password.value);
+};
+</script>

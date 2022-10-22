@@ -1,7 +1,6 @@
 <template>
-  <cr>
+  <section>
     <router-view class="app-main" />
-    <createTesterUser>
   </section>
 </template>
 
@@ -10,7 +9,6 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
-import {createTesterUser} from "./components/CreateTesterUser.vue";
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
@@ -22,7 +20,7 @@ onMounted(async () => {
       router.push({ path: "/auth" });
     } else {
       // continue to dashboard
-      router.push({ path: "/" });
+      router.push({ path: "/dashboard" });
     }
   } catch (e) {
     console.log(e);

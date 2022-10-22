@@ -95,6 +95,7 @@
           <div v-if="inputPassword">
             <label for="password-confirm" class="sr-only">Password</label>
             <input
+              v-model="confirmPassword"
               data-test-input-password-confirm
               id="password-confirm"
               name="password-confirm"
@@ -113,13 +114,11 @@
                 placeholder-gray-500
                 text-gray-900
                 rounded-b-md
-                focus:outline-none
-                focus:ring-indigo-500
-                focus:border-indigo-500
-                focus:z-10
+                focus:outline-none focus:z-10
                 sm:text-sm
               "
               placeholder="Repeat the password here"
+              :class="errorInput"
             />
           </div>
         </div>
@@ -155,17 +154,54 @@
         </div>
       </form>
     </div>
+    <ModalVerticalVue
+      v-if="showModal"
+      :header="header"
+      :body="body"
+      :buttonMessage="buttonMessage"
+      @close="onModalClose"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { computed } from "vue";
+import router from "../router/index";
+import ModalVerticalVue from "../components/ModalVertical.vue";
+
+const header = " 👉 Check your inbox!! ✉️";
+const body = "You only have to confirm your email address and that's it";
+const buttonMessage = "OK";
+
 const inputMail = ref("");
 const inputPassword = ref("");
 const confirmPassword = ref("");
+let showModal = ref(false);
+
 const passwordsMatch = computed(() => {
-  return inputPassword === confirmPassword;
+  return inputPassword.value === confirmPassword.value;
 });
-const submit = () => {};
+const errorInput = computed(() => {
+  return !passwordsMatch.value
+    ? "focus:ring-red-500 focus:border-red-500 border-red-500 "
+    : "focus:ring-indigo-500 focus:border-indigo-500  ";
+});
+
+const submit = () => {
+  const form = document.querySelector("form");
+  if (form.checkValidity() && passwordsMatch.value) {
+    //form.submit();
+    showModal.value = true;
+  } else {
+    form.reportValidity();
+  }
+};
+
+const onModalClose = () => {
+  showModal.value = false;
+  router.go("/auth");
+};
 </script>
+
+<style scoped></style>
