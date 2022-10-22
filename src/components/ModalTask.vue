@@ -98,9 +98,14 @@ let taskTitle = ref("");
 const emit = defineEmits(["submit", "close"]);
 const submit = () => {
   emit("submit", taskTitle.value);
+  clean();
 };
 const cancel = () => {
   emit("close");
+  clean();
+};
+const clean = () => {
+  taskTitle.value = "";
 };
 </script>
 
