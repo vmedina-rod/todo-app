@@ -7,6 +7,7 @@ export const useUserStore = defineStore("user", {
   }),
   getters: {
     userName: (state) => state.user?.user_metadata.name ?? state.user?.email,
+    userId: (state) => state.user?.id,
   },
 
   actions: {
@@ -33,6 +34,7 @@ export const useUserStore = defineStore("user", {
     async singOut() {
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
+      this.user = null;
     },
     persist: {
       enabled: true,

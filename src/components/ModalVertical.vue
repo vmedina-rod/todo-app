@@ -39,13 +39,13 @@
   </div>
 </template>
 
-  <script>
+<script>
 export default {
   props: {
     header: String,
     body: String,
     footer: String,
-    buttonMessage: String,
+    buttonMessage: { type: String, default: "OK" },
     showModal: Boolean,
   },
   methods: {
