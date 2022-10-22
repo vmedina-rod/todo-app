@@ -14,7 +14,7 @@
         rounded-lg
         text-sm
         w-full
-        sm:w-auto
+        md:w-auto
         px-5
         py-2.5
         text-center
@@ -24,7 +24,7 @@
       Add New Task ✏️
     </button>
     <ModalTask
-      @submit="submit"
+      @submit="createTask"
       @close="showInput = !showInput"
       v-show="showInput"
     />
@@ -34,20 +34,10 @@
 <script setup>
 import { ref } from "vue";
 import ModalTask from "./ModalTask.vue";
-import { storeToRefs } from "pinia";
-import { useTaskStore } from "../stores/task";
-import Task from "../interfaces/Task";
-import generateRandomTaskId from "../utils/idUtils";
-import { useUserStore } from "../stores/user";
-const userStore = useUserStore();
-const { userId } = storeToRefs(userStore);
-
 const showInput = ref(false);
-
-const taskStore = useTaskStore();
-const submit = async (taskTitle) => {
-  const task = new Task(generateRandomTaskId(), taskTitle, false, userId.value);
-  await taskStore.createTask(task);
+const emit = defineEmits(["createTask"]);
+const createTask = async (taskTitle) => {
+  emit("createTask", taskTitle);
   showInput.value = false;
 };
 </script>
