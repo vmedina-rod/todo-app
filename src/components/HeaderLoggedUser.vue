@@ -1,9 +1,7 @@
 <template>
-  <header class="p-4 shadow-sm">
-    <div class="inline-block text-lg">
-      <h1>Welcome back</h1>
-      <span data-test-logged-user-name>{{ userStore.userName }}</span>
-    </div>
+  <header class="p-4 shadow-sm flex justify-end">
+    <UserAvatar :userName="userStore.userName" />
+    <!-- <div> -->
     <!-- <div
         class="inline-block top-auto text-teal-800 float-right rounded-full mx-1 px-2"
       >
@@ -23,11 +21,11 @@
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
 import { useUserStore } from "../stores/user";
 const userStore = useUserStore();
-import { storeToRefs } from "pinia";
+
 import TaskComponent from "../components/TaskComponent.vue";
+import UserAvatar from "./UserAvatar.vue";
 </script>
 
-<style></style>
+<style scoped></style>
