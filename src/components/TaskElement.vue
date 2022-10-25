@@ -1,9 +1,9 @@
 <template>
   <div v-if="task && task.title">
     <div
+      :class="{ isCompleted: task.isCompleted }"
       class="
-        min-width-400
-        card
+        min-width-task
         m-2
         cursor-pointer
         border border-gray-400
@@ -31,15 +31,15 @@
         {{ task.title }}
       </p>
       <div class="m-3 flex flex-row items-center">
-        <div class="text-sm inline rounded-full px-2">
+        <div
+          class="text-sm inline rounded-full px-2 flex flex-row items-center"
+        >
           <input
             data-test-done-task-button
-            v-model="task.isCompleted"
-            :checked="task.isCompleted"
             @click="toggleTaskCompleted"
-            id="green-checkbox"
+            :checked="task.isCompleted"
+            :id="'green-checkbox-' + task.id"
             type="checkbox"
-            value=""
             class="
               w-4
               h-4
@@ -55,7 +55,7 @@
           />
           <label
             v-if="task.isCompleted"
-            for="green-checkbox"
+            :for="'green-checkbox-' + task.id"
             class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
             >Completed</label
           >
@@ -96,7 +96,7 @@
     @submit="editTask"
     @close="showModal = !showModal"
     v-if="showModal"
-    :task="props.task"
+    :task="task"
   />
 </template>
 
@@ -131,7 +131,15 @@ const editTask = (newTaskTitle) => {
 </script>
 
 <style scoped>
-.min-width-400 {
-  min-width: 400px;
+.min-width-task {
+  min-width: 250px;
+}
+.isCompleted {
+  border: 1px solid #999999;
+  background-color: rgba(169, 169, 169, 0.704);
+}
+.isCompleted > p {
+  text-decoration: line-through;
+  filter: grayscale(100%);
 }
 </style>

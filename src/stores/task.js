@@ -71,8 +71,6 @@ export const useTaskStore = defineStore("tasks", {
     async editTask(task) {
       const taskToBeUpdated = task;
 
-      console.log(taskToBeUpdated);
-
       const { data, error } = await supabase
         .from("tasks")
         .update({
