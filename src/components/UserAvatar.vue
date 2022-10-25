@@ -1,61 +1,48 @@
 <template>
-  <div class="flex items-center">
-    <transition name="slide-fade">
-      <span
-        data-test-logged-user-name
-        v-show="showUserNameOnHover"
-        class="font-medium text-gray-600 dark:text-gray-300 mr-2"
-        >{{ userName }}</span
-      >
-    </transition>
-    <div
+  <button
+    type="button"
+    class="group flex shrink-0 items-center rounded-lg transition"
+  >
+    <span class="sr-only">Menu</span>
+    <img
+      alt="Man"
+      src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+      class="h-10 w-10 rounded-full object-cover"
+    />
+
+    <p class="ml-2 hidden text-left text-xs sm:block">
+      <strong class="block font-medium">Eric Frusciante</strong>
+
+      <span class="text-gray-500">{{ userName }}</span>
+    </p>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
       class="
-        inline-flex
-        overflow-hidden
-        relative
-        justify-center
-        items-center
-        w-10
-        h-10
-        bg-gray-100
-        rounded-full
-        dark:bg-gray-600
+        ml-4
+        hidden
+        h-5
+        w-5
+        text-gray-500
+        transition
+        group-hover:text-gray-700
+        sm:block
       "
-      @mouseover="showUserNameOnHover = true"
-      @mouseleave="showUserNameOnHover = false"
+      viewBox="0 0 20 20"
+      fill="currentColor"
     >
-      <svg
-        class="absolute -left-1 w-12 h-12 text-gray-400"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-    </div>
-  </div>
+      <path
+        fill-rule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </button>
 </template>
 
 <script setup>
-import { ref } from "vue";
-let showUserNameOnHover = ref(false);
 const props = defineProps({ userName: String });
 </script>
 
 <style scoped>
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-.slide-fade-leave-active {
-  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
 </style>

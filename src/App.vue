@@ -1,4 +1,5 @@
 <template>
+  <TheHeader />
   <HeaderLoggedUser />
   <section>
     <router-view class="app-main" />
@@ -11,6 +12,7 @@ import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import HeaderLoggedUser from "./components/HeaderLoggedUser.vue";
+import TheHeader from "./components/TheHeader.vue";
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);

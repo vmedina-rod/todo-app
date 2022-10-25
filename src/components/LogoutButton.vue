@@ -1,33 +1,27 @@
 <template>
-  <button
+  <a
     @click="logout"
-    data-test-logout-button
-    type="button"
+    href="#"
+    title="Logout"
     class="
-      ml-2
-      text-gray-400
-      bg-gray-200
-      hover:bg-gray-600
-      focus:ring-4 focus:outline-none focus:ring-gray-300
-      font-medium
-      rounded-full
-      text-sm
-      p-3
-      text-center
-      inline-flex
-      items-center
-      mr-2
-      bg-gray-100
-      rounded-full
-      dark:bg-gray-600
+      block
+      shrink-0
+      rounded-lg
+      bg-white
+      p-2.5
+      text-gray-600
+      shadow-sm
+      hover:text-gray-700
     "
   >
+    <span class="sr-only">Logout</span>
     <svg
-      class="w-6 h-6"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
+      class="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
     >
       <path
         stroke-linecap="round"
@@ -36,7 +30,7 @@
         d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
       ></path>
     </svg>
-  </button>
+  </a>
 </template>
 
 <script setup>
