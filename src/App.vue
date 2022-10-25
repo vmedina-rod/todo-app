@@ -1,18 +1,21 @@
 <template>
-  <TheHeader />
-  <HeaderLoggedUser />
+  <TheHeader v-if="!isLoggedIn" />
+  <HeaderLoggedUser v-if="isLoggedIn" />
   <section>
     <router-view class="app-main" />
   </section>
+  <TheFooter />
 </template>
 
 <script setup>
 import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
+import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./stores/user.js";
 import HeaderLoggedUser from "./components/HeaderLoggedUser.vue";
 import TheHeader from "./components/TheHeader.vue";
+import TheFooter from "./components/TheFooter.vue";
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
@@ -29,6 +32,10 @@ onMounted(async () => {
   } catch (e) {
     console.log(e);
   }
+});
+
+const isLoggedIn = computed(() => {
+  return userStore.userName;
 });
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <header v-if="userStore.userName" class="bg-gray-50">
+  <header class="bg-gray-50">
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
       <div class="flex items-center sm:justify-between sm:gap-4">
         <div class="relative hidden sm:block">
@@ -66,6 +66,7 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import UserAvatar from "./UserAvatar.vue";
 import LogoutButton from "./LogoutButton.vue";
 import { useUserStore } from "../stores/user";
