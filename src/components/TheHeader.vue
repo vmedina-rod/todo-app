@@ -9,7 +9,7 @@
         <div class="md:flex md:items-center md:gap-12">
           <a class="block text-teal-600 dark:text-teal-600" href="/">
             <span class="sr-only">Home</span>
-            <img class="h-8 w-auto" src="@/assets/logo.svg" alt="Logo" />
+            <img class="h-8 w-auto" src="@/assets/logo.webp" alt="Logo" />
           </a>
         </div>
 
@@ -49,40 +49,46 @@
 
         <div class="flex items-center gap-4">
           <div class="sm:flex sm:gap-4">
-            <a
-              class="
-                rounded-md
-                bg-teal-600
-                px-5
-                py-2.5
-                text-sm
-                font-medium
-                text-white
-                shadow
-                dark:hover:bg-teal-500
-              "
-              href="/"
-            >
-              Login
-            </a>
+            <router-link to="/auth">
+              <div class="hidden sm:flex">
+                <a
+                  class="
+                    rounded-md
+                    bg-teal-600
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    text-white
+                    shadow
+                    dark:hover:bg-teal-500
+                  "
+                  href="/"
+                >
+                  Login
+                </a>
+              </div>
+            </router-link>
 
-            <div class="hidden sm:flex">
-              <a
-                class="
-                  rounded-md
-                  bg-gray-100
-                  px-5
-                  py-2.5
-                  text-sm
-                  font-medium
-                  text-teal-600
-                  dark:bg-gray-800 dark:text-white dark:hover:text-white/75
-                "
-                href="/"
-              >
-                Register
-              </a>
-            </div>
+            <router-link to="/register">
+              <div class="hidden sm:flex">
+                <a
+                  class="
+                    rounded-md
+                    bg-gray-100
+                    px-5
+                    py-2.5
+                    text-sm
+                    font-medium
+                    text-teal-600
+                    dark:bg-gray-800 dark:text-white dark:hover:text-white/75
+                  "
+                  href="/"
+                >
+                  Register
+                </a>
+              </div>
+            </router-link>
           </div>
 
           <div class="block md:hidden">

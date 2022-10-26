@@ -11,7 +11,7 @@
             sm:justify-start
           "
         >
-          <img class="h-8 w-auto" src="@/assets/logo.svg" alt="Logo" />
+          <img class="h-8 w-auto" src="@/assets/logo.webp" alt="Logo" />
         </div>
 
         <p

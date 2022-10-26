@@ -2,37 +2,66 @@
   <div class="modal-mask" v-if="body && buttonMessage">
     <div data-test-modal class="modal-wrapper">
       <div class="modal-container">
-        <div class="modal-header font-bold">
-          {{ header }}
-        </div>
+        <div
+          class="rounded-2xl border border-blue-100 bg-white p-8 shadow-lg"
+          role="alert"
+        >
+          <div class="items-center sm:flex">
+            <span
+              class="
+                inline-flex
+                h-8
+                w-8
+                flex-shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-blue-400
+                text-white
+              "
+            >
+              <svg
+                class="h-3 w-3"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
 
-        <div class="modal-body">
-          {{ body }}
-        </div>
+            <p class="mt-3 text-lg font-medium sm:mt-0 sm:ml-3">
+              {{ header }}
+            </p>
+          </div>
 
-        <div class="flex justify-center">
-          {{ footer }}
-          <button
-            data-test-modal-button
-            class="
-              py-2
-              px-10
-              border border-transparent
-              text-sm
-              font-medium
-              rounded-md
-              text-white
-              bg-indigo-600
-              hover:bg-indigo-700
-              focus:outline-none
-              focus:ring-2
-              focus:ring-offset-2
-              focus:ring-indigo-500
-            "
-            @click="onClick"
-          >
-            {{ buttonMessage }}
-          </button>
+          <p class="mt-4 text-gray-500">
+            {{ body }}
+          </p>
+
+          <div class="mt-6 sm:flex">
+            <button
+              class="
+                inline-block
+                w-full
+                rounded-lg
+                bg-blue-500
+                px-5
+                py-3
+                text-center text-sm
+                font-semibold
+                text-white
+                sm:w-auto
+              "
+              @click="onClick"
+            >
+              {{ buttonMessage }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -72,14 +101,9 @@ export default {
   vertical-align: middle;
 }
 .modal-container {
-  width: 300px;
+  width: 35rem;
   margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
 }
 .modal-header h3 {
   margin-top: 0;

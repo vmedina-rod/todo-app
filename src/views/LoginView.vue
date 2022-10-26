@@ -13,7 +13,13 @@
   >
     <div class="max-w-md w-full space-y-8">
       <div>
-        <div class="p-1 text-center text-3xl">🗒️✏️</div>
+        <div class="p-1 text-center text-3xl">
+          <img
+            class="mx-auto"
+            src="@/assets/todovue-icon.webp"
+            alt="Logo"
+          />
+        </div>
         <h2
           data-test-login
           class="
@@ -120,8 +126,8 @@
               font-medium
               rounded-md
               text-white
-              bg-indigo-600
-              hover:bg-indigo-700
+              bg-green-500
+              hover:bg-green-600
               focus:outline-none
               focus:ring-2
               focus:ring-offset-2
