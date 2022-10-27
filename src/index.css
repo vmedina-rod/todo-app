@@ -2,10 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-green-500 {
-    background-color: #afd25f;
+:root {
+    --green-500: #afd25f;
+    --green-500-rgb: '175, 210, 95';
+    --green-600: #2e891b;
+    --tw-border-opacity: 1;
 }
 
-.bg-green-600{
-    background-color: #2e891b;
+.bg-green-500 {
+    background-color: var(--green-500)
+}
+
+.text-green-500 {
+    color: var(--green-500);
+}
+
+.border-green-500 {
+    border-color: rgb(var(--green-500)/ var(--tw-border-opacity));
+}
+
+.bg-green-600 {
+    background-color: var(--green-600)
+}
+
+.text-green-600 {
+    color: var(--green-600);
+}
+
+.border-green-600 {
+    border-color: rgb(var(--green-600)/ var(--tw-border-opacity));
 }

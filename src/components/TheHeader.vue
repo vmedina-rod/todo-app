@@ -54,14 +54,14 @@
                 <a
                   class="
                     rounded-md
-                    bg-teal-600
+                    bg-green-500
                     px-5
                     py-2.5
                     text-sm
                     font-medium
                     text-white
                     shadow
-                    dark:hover:bg-teal-500
+                    dark:hover:bg-green-600
                   "
                   href="/"
                 >
@@ -80,7 +80,7 @@
                     py-2.5
                     text-sm
                     font-medium
-                    text-teal-600
+                    text-green-500
                     dark:bg-gray-800 dark:text-white dark:hover:text-white/75
                   "
                   href="/"

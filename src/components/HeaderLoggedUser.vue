@@ -3,7 +3,7 @@
     <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
       <div class="flex items-center sm:justify-between sm:gap-4">
         <div class="relative hidden sm:block">
-          <img class="h-8 w-auto" src="@/assets/logo.svg" alt="Logo" />
+          <img class="h-8 w-auto" src="@/assets/logo.webp" alt="Logo" />
         </div>
 
         <div
