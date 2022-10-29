@@ -1,7 +1,7 @@
 <template>
   <TheHeader v-if="!isLoggedIn" />
   <HeaderLoggedUser v-if="isLoggedIn" />
-  <section>
+  <section class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
     <router-view class="app-main" />
   </section>
   <TheFooter />

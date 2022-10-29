@@ -2,9 +2,11 @@
   <div>
     <button
       @click="showInput = !showInput"
-      data-test-new-task-button
       type="submit"
       class="
+        flex
+        items-center
+        justify-center
         my-2
         text-white
         bg-slate-700
@@ -14,14 +16,28 @@
         rounded-lg
         text-sm
         w-full
-        md:w-auto
+        md:w-full
         px-5
         py-2.5
         text-center
         dark:bg-slate-600 dark:hover:bg-slate-700 dark:focus:ring-slate-800
       "
     >
-      Add New Task ✏️
+      Add New Task
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-5 w-5"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </svg>
     </button>
     <ModalTask
       @submit="createTask"

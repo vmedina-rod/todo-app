@@ -24,7 +24,7 @@
                     hover:text-gray-500/75
                     dark:text-white dark:hover:text-white/75
                   "
-                  href="/"
+                  href="/about"
                 >
                   About
                 </a>
