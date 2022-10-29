@@ -9,8 +9,8 @@
 import CreateTask from "./CreateTaskButton.vue";
 import DeleteAllTasksButton from "./DeleteAllTasksButton.vue";
 const emit = defineEmits(["createTask", "deleteAllTasks"]);
-const createTask = (taskTitle) => {
-  emit("createTask", taskTitle);
+const createTask = (taskTitle, taskPriority) => {
+  emit("createTask", taskTitle, taskPriority);
 };
 const deleteAllTasks = () => {
   emit("delete-all-tasks");

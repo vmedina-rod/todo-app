@@ -4,9 +4,18 @@
       <SideBar @create-task="createTask" @delete-all-tasks="deleteAllTasks" />
     </aside>
     <main
-      class="flex-1 p-3 py-2 flex flex-col md:flex-row justify-around mt-10 flex-wrap"
+      class="
+        flex-1
+        p-3
+        py-2
+        flex flex-col
+        md:flex-row
+        justify-around
+        mt-10
+        flex-wrap
+      "
     >
-      <div data-test-task-list-pending>
+      <div>
         <h2 class="text-center">Pending Tasks ◻️</h2>
         <TaskList
           :tasks="[...tasks.filter((t) => !t.isCompleted)]"
@@ -16,7 +25,7 @@
         />
       </div>
 
-      <div data-test-task-list-completed class="md:mt-0 mt-10">
+      <div class="md:mt-0 mt-10">
         <h2 class="text-center">Completed Tasks ✅</h2>
         <TaskList
           :tasks="[...tasks.filter((t) => t.isCompleted)]"
@@ -59,13 +68,14 @@ let showModal = ref(false);
 let modalHeader = ref(null);
 let modalBody = ref(null);
 
-const createTask = async (taskTitle) => {
+const createTask = async (taskTitle, taskPriority) => {
   const { userId } = storeToRefs(userStore);
   const newTask = new Task(
     generateRandomTaskId(),
     taskTitle,
     false,
-    userId.value
+    userId.value,
+    taskPriority
   );
   await taskStore.createTask(newTask);
 };

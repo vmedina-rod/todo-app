@@ -1,7 +1,6 @@
 <template>
   <button
     @click="deleteAll"
-    data-test-delete-all-tasks-button
     type="submit"
     class="
       my-2
@@ -26,7 +25,7 @@
 
 <script setup>
 const emit = defineEmits(["delete-all-tasks"]);
-const deleteAll = async (taskTitle) => {
+const deleteAll = async (taskTitle, taskPriority) => {
   emit("delete-all-tasks");
 };
 </script>

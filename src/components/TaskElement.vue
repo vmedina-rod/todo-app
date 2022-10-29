@@ -18,24 +18,32 @@
         justify-between
       "
     >
-      <p
-        class="
-          font-light font-mono
-          text-sm text-gray-700
-          hover:text-gray-900
-          transition-all
-          duration-200
-          ml-2
-        "
-      >
-        {{ task.title }}
-      </p>
+      <div class="flex flex-row items-center justify-center p-2">
+        <div
+          v-on:mouseenter="toggleTooltip()"
+          v-on:mouseleave="toggleTooltip()"
+          :class="priorityColorClass"
+        ></div>
+
+        <p
+          class="
+            font-light font-mono
+            text-sm text-gray-700
+            hover:text-gray-900
+            transition-all
+            duration-200
+            ml-2
+          "
+        >
+          {{ task.title }}
+        </p>
+      </div>
+
       <div class="m-3 flex flex-row items-center">
         <div
           class="text-sm inline rounded-full px-2 flex flex-row items-center"
         >
           <input
-            data-test-done-task-button
             @click="toggleTaskCompleted"
             :checked="task.isCompleted"
             :id="'green-checkbox-' + task.id"
@@ -61,11 +69,7 @@
           >
         </div>
 
-        <span
-          @click="openModal"
-          data-test-edit-task-button
-          class="ml-2 align-center cursor-pointer"
-        >
+        <span @click="openModal" class="ml-2 align-center cursor-pointer">
           <svg
             class="w-4 h-4"
             fill="currentColor"
@@ -85,13 +89,31 @@
 
         <strong
           @click="deleteTask"
-          data-test-delete-task-button
           class="text-xl ml-2 align-center cursor-pointer alert-del"
           >&times;</strong
         >
       </div>
     </div>
   </div>
+
+  <div class="tooltip-box">
+    <div
+      :class="priorityColor().color"
+      ref="tooltipRef"
+      v-bind:class="{
+        hidden: !tooltipShow,
+        block: tooltipShow,
+      }"
+      class="tooltip"
+    >
+      <span
+        :style="{ 'border-bottom-color': priorityColor().color }"
+        class="triangle"
+      ></span>
+      {{ priorityColor().tooltip }}
+    </div>
+  </div>
+
   <ModalTask
     @submit="editTask"
     @close="showModal = !showModal"
@@ -103,7 +125,7 @@
 <script setup>
 import Task from "../interfaces/Task";
 import ModalTask from "../components/ModalTask.vue";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const props = defineProps({
   task: Task,
 });
@@ -123,10 +145,50 @@ let showModal = ref(false);
 const openModal = () => {
   showModal.value = true;
 };
-const editTask = (newTaskTitle) => {
+const editTask = (newTaskTitle, newTaskPriority) => {
   props.task.title = newTaskTitle;
+  props.task.priority = newTaskPriority;
   emit("editTask", props.task);
   showModal.value = false;
+};
+
+const thePriority = ref(props.task.priority);
+
+const priorityColor = () => {
+  if (thePriority.value === 0) {
+    const info = {
+      color: "bg-blue-500",
+      tooltip: "Priority Normal",
+    };
+    return info;
+  } else if (thePriority.value === 1) {
+    const info = {
+      color: "bg-red-500",
+      tooltip: "Priority High",
+    };
+    return info;
+  } else if (thePriority.value === 2) {
+    const info = {
+      color: "bg-yellow-500",
+      tooltip: "Priority Medium",
+    };
+    return info;
+  } else {
+    const info = {
+      color: "bg-green-500",
+      tooltip: "Priority Low",
+    };
+    return info;
+  }
+};
+
+const priorityColorClass = computed(() => {
+  return "rounded-full w-3 h-3 " + priorityColor().color;
+});
+
+const tooltipShow = ref(false);
+const toggleTooltip = () => {
+  tooltipShow.value = !tooltipShow.value;
 };
 </script>
 
@@ -141,5 +203,28 @@ const editTask = (newTaskTitle) => {
 .isCompleted > p {
   text-decoration: line-through;
   filter: grayscale(100%);
+}
+
+.tooltip {
+  width: 175px;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  top: calc(100% + -20px);
+  left: -23%;
+  position: absolute;
+  z-index: 99;
+}
+.tooltip-box {
+  position: relative;
+}
+.triangle {
+  border-width: 0 6px 6px;
+  border-color: transparent;
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translate-x(-50%);
 }
 </style>

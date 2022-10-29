@@ -20,7 +20,8 @@ export const useTaskStore = defineStore("tasks", {
               element.id,
               element.title,
               element.is_complete,
-              element.user_id
+              element.user_id,
+              element.priority
             )
         );
       }
@@ -33,6 +34,7 @@ export const useTaskStore = defineStore("tasks", {
           title: task.title,
           is_complete: task.isCompleted,
           inserted_at: new Date().toISOString(),
+          priority: task.priority,
         },
       ]);
       if (error) throw error;
@@ -76,6 +78,7 @@ export const useTaskStore = defineStore("tasks", {
         .update({
           is_complete: taskToBeUpdated.isCompleted,
           title: taskToBeUpdated.title,
+          priority: taskToBeUpdated.priority,
         })
         .match({ id: taskToBeUpdated.id });
       if (error) throw error;

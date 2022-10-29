@@ -36,8 +36,8 @@ import { ref } from "vue";
 import ModalTask from "./ModalTask.vue";
 const showInput = ref(false);
 const emit = defineEmits(["createTask"]);
-const createTask = async (taskTitle) => {
-  emit("createTask", taskTitle);
+const createTask = async (taskTitle, taskPriority) => {
+  emit("createTask", taskTitle, taskPriority);
   showInput.value = false;
 };
 </script>

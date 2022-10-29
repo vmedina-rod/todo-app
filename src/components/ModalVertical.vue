@@ -1,6 +1,6 @@
 <template>
   <div class="modal-mask" v-if="body && buttonMessage">
-    <div data-test-modal class="modal-wrapper">
+    <div class="modal-wrapper">
       <div class="modal-container">
         <div
           class="rounded-2xl border border-blue-100 bg-white p-8 shadow-lg"
