@@ -8,8 +8,8 @@
       justify-center
       my-2
       text-white
-      bg-slate-700
-      hover:bg-slate-800
+      bg-red-500
+      hover:bg-red-800
       focus:ring-4 focus:outline-none focus:ring-slate-300
       font-medium
       rounded-lg

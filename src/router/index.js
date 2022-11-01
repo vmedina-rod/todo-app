@@ -5,6 +5,8 @@ import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import DashBoardView from "../views/DashBoardView.vue";
 import AboutView from "../views/AboutView.vue";
+import NotFoundView from "../views/NotFoundView.vue";
+import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
@@ -28,9 +30,14 @@ const routes = [
     component: DashBoardView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: AboutView,
+    path: "/home",
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "not-found",
+    component: NotFoundView,
   },
 ];
 

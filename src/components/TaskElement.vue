@@ -16,6 +16,7 @@
         flex flex-row
         items-center
         justify-between
+        shadow-xl
       "
     >
       <div class="flex flex-row items-center justify-center p-2">
@@ -34,6 +35,7 @@
             duration-200
             ml-2
           "
+          :class="{ 'line-through': task.isCompleted }"
         >
           {{ task.title }}
         </p>
@@ -65,11 +67,15 @@
             v-if="task.isCompleted"
             :for="'green-checkbox-' + task.id"
             class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Completed</label
           >
+          </label>
         </div>
 
-        <span @click="openModal" class="ml-2 align-center cursor-pointer">
+        <span
+          @click="openModal"
+          class="ml-2 align-center cursor-pointer"
+          title="Edit Task"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -89,6 +95,7 @@
         <strong
           @click="deleteTask"
           class="text-xl ml-2 align-center cursor-pointer alert-del"
+          title="Delete task"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

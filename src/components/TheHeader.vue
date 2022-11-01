@@ -13,40 +13,6 @@
           </a>
         </div>
 
-        <div class="hidden md:block">
-          <nav aria-label="Site Nav">
-            <ul class="flex items-center gap-6 text-sm">
-              <li>
-                <a
-                  class="
-                    text-gray-500
-                    transition
-                    hover:text-gray-500/75
-                    dark:text-white dark:hover:text-white/75
-                  "
-                  href="/about"
-                >
-                  About
-                </a>
-              </li>
-
-              <li>
-                <a
-                  class="
-                    text-gray-500
-                    transition
-                    hover:text-gray-500/75
-                    dark:text-white dark:hover:text-white/75
-                  "
-                  href="/"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
         <div class="flex items-center gap-4">
           <div class="sm:flex sm:gap-4">
             <router-link to="/auth">

@@ -112,7 +112,6 @@
 
               <input
                 v-model="inputPassword"
-                data-test-input-password
                 id="password"
                 name="password"
                 type="password"
@@ -148,7 +147,6 @@
 
               <input
                 v-model="confirmPassword"
-                data-test-input-password-confirm
                 id="password-confirm"
                 name="password-confirm"
                 type="password"
@@ -209,7 +207,6 @@
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button
                 @click.prevent="submit"
-                data-test-register-button
                 type="submit"
                 class="
                   inline-block

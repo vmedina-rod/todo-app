@@ -57,8 +57,7 @@
         </h1>
 
         <p class="mt-1.5 text-sm text-gray-500">
-          Your website has seen a 52% increase in traffic in the last month.
-          Keep it up! 🚀
+          Here you can add your tasks and organize yourself 🚀
         </p>
       </div>
     </div>
@@ -75,9 +74,8 @@ const userStore = useUserStore();
 const router = useRouter();
 
 const logout = async () => {
-  console.log("logging out");
   userStore.singOut();
-  router.push({ path: "/auth" });
+  router.push({ path: "/home" });
 };
 </script>
 

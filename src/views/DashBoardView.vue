@@ -17,7 +17,7 @@
     >
       <div>
         <h2 class="text-center">
-          {{ [...tasks.filter((t) => !t.isCompleted)].length }} Pending Tasks ◻️
+          {{ [...tasks.filter((t) => !t.isCompleted)].length }} Pending Tasks 📋
         </h2>
         <TaskList
           :tasks="[...tasks.filter((t) => !t.isCompleted)]"

@@ -137,7 +137,7 @@ let taskTitle = ref(props.task ? props.task.title : "");
 let taskPriority = ref(props.task ? props.task.priority : "");
 const emit = defineEmits(["submit", "close"]);
 const submit = () => {
-  emit("submit", taskTitle.value, taskPriority.value);
+  emit("submit", taskTitle.value, taskPriority.value ? taskPriority.value : 0);
   clean();
 };
 const cancel = () => {

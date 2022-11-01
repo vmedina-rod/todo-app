@@ -9,8 +9,8 @@
         justify-center
         my-2
         text-white
-        bg-slate-700
-        hover:bg-slate-800
+        bg-lime-500
+        hover:bg-lime-900
         focus:ring-4 focus:outline-none focus:ring-slate-300
         font-medium
         rounded-lg

@@ -9,6 +9,10 @@
     --tw-border-opacity: 1;
 }
 
+.green-500 {
+    background-color: var(--green-600)
+}
+
 .bg-green-500 {
     background-color: var(--green-500)
 }
@@ -21,6 +25,10 @@
     border-color: rgb(var(--green-500)/ var(--tw-border-opacity));
 }
 
+.green-600 {
+    background-color: var(--green-600);
+}
+
 .bg-green-600 {
     background-color: var(--green-600)
 }
@@ -31,4 +39,10 @@
 
 .border-green-600 {
     border-color: rgb(var(--green-600)/ var(--tw-border-opacity));
+}
+
+.from-green-500 {
+    --tw-gradient-from: var(--green-500);
+    --tw-gradient-to: var(--green-600);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
