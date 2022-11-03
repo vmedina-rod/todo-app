@@ -204,6 +204,10 @@
               </p>
             </div>
 
+            <div class="error-message text-red-500 text-sm">
+              {{ errorMessage }}
+            </div>
+
             <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
               <button
                 @click.prevent="submit"
@@ -268,11 +272,13 @@ const buttonMessage = "OK";
 const inputMail = ref("");
 const inputPassword = ref("");
 const confirmPassword = ref("");
+const errorMessage = ref("");
 let showModal = ref(false);
 
 const passwordsMatch = computed(() => {
   return inputPassword.value === confirmPassword.value;
 });
+
 const errorInput = computed(() => {
   return !passwordsMatch.value
     ? "focus:ring-red-500 focus:border-red-500 border-red-500 "
@@ -280,12 +286,16 @@ const errorInput = computed(() => {
 });
 
 const submit = async () => {
-  const form = document.querySelector("form");
-  if (form.checkValidity() && passwordsMatch.value) {
-    await userStore.signUp(inputMail.value, inputPassword.value);
-    showModal.value = true;
-  } else {
-    form.reportValidity();
+  try {
+    const form = document.querySelector("form");
+    if (form.checkValidity() && passwordsMatch.value) {
+      await userStore.signUp(inputMail.value, inputPassword.value);
+      showModal.value = true;
+    } else {
+      form.reportValidity();
+    }
+  } catch (error) {
+    errorMessage.value = error.message;
   }
 };
 

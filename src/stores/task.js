@@ -21,7 +21,8 @@ export const useTaskStore = defineStore("tasks", {
               element.title,
               element.is_complete,
               element.user_id,
-              element.priority
+              element.priority,
+              element.created_at
             )
         );
       }
@@ -62,14 +63,17 @@ export const useTaskStore = defineStore("tasks", {
         .from("tasks")
         .delete()
         .match({ id: taskToBeDeleted.id });
+
       if (error) {
         this.tasks = [...this.tasks, taskToBeDeleted];
         throw error;
       }
     },
+
     async toggleTaskCompleted(task) {
       this.editTask(task);
     },
+
     async editTask(task) {
       const taskToBeUpdated = task;
 

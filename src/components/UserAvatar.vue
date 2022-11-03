@@ -11,14 +11,17 @@
     />
 
     <p class="ml-2 hidden text-left text-xs sm:block">
-      <strong class="block font-medium">{{ userName }}</strong>
+      <strong class="block font-medium">Welcome</strong>
 
-      <!--       <span class="text-gray-500">{{ userName }}</span> -->
+      <span class="text-gray-500">{{ userStore.userName }}</span>
     </p>
   </button>
 </template>
 
 <script setup>
+import { useUserStore } from "../stores/user";
+import { useRouter } from "vue-router";
+const userStore = useUserStore();
 </script>
 
 <style scoped></style>

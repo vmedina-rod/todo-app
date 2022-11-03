@@ -90,6 +90,10 @@
           </div>
         </div>
 
+        <div class="error-message text-red-500 text-sm">
+          {{ errorMessage }}
+        </div>
+
         <button
           @click.prevent="singIn"
           type="submit"
@@ -130,15 +134,23 @@ import { useUserStore } from "../stores/user";
 import router from "../router/index";
 
 const userStore = useUserStore();
-
 let email = ref("");
 let password = ref("");
-
+let errorMessage = ref("");
 const hidePassword = ref(true);
 
 const singIn = async () => {
-  await userStore.singIn(email.value, password.value);
-  router.go("/");
+  try {
+    await userStore.singIn(email.value, password.value);
+    router.go("/");
+  } catch (error) {
+    console.log(error);
+    errorMessage.value = error.message;
+
+    setTimeout(() => {
+      errorMessage.value = "";
+    }, 3000);
+  }
 };
 
 const passwordFieldType = computed(() =>
