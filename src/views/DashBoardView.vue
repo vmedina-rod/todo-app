@@ -1,17 +1,4 @@
 <template>
-  <div class="flex flex-col">
-    <div
-      class="
-        mt-4
-        grid grid-cols-1
-        gap-4
-        sm:grid-cols-2
-        lg:grid-cols-2
-        xl:grid-cols-2
-      "
-    ></div>
-  </div>
-
   <div class="flex flex-start flex-col md:flex-row">
     <aside class="left-0 top-0 lg:h-screen p-4 mt-10">
       <SideBar @create-task="createTask" @delete-all-tasks="deleteAllTasks" />
@@ -24,7 +11,6 @@
         flex flex-col
         md:flex-row
         justify-around
-        mt-10
         flex-wrap
       "
     >
@@ -76,7 +62,7 @@
         />
       </div>
 
-      <div class="flex-1 p-3 md:mt-0 mt-10">
+      <div class="flex-1 p-3 md:mt-0">
         <div class="flex items-center rounded-xl bg-white p-4 shadow-lg mb-10">
           <div
             class="
