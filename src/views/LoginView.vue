@@ -9,8 +9,7 @@
       </h1>
 
       <p class="mx-auto mt-4 max-w-md text-center text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt
-        dolores deleniti inventore quaerat mollitia?
+        Join millions of people who organize work and life with TodoVue.
       </p>
 
       <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">

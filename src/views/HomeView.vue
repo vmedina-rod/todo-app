@@ -67,37 +67,6 @@
               Let's Get Started
             </button>
           </router-link>
-          <button
-            class="
-              w-full
-              lg:w-max
-              px-4
-              py-3
-              border border-slate-200
-              hover:cursor-pointer
-              font-medium
-              rounded
-              inline-flex
-              items-center
-              justify-center
-            "
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-4 h-4 mr-1"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
-              ></path>
-            </svg>
-            Watch a demo
-          </button>
         </div>
       </div>
       <div class="col-span-6 relative">
@@ -313,6 +282,175 @@
             class="pointer-events-none absolute inset-0 h-full w-full"
           />
         </div>
+      </div>
+    </section>
+
+    <section
+      class="
+        py-8
+        px-4
+        md:px-8
+        lg:py-16
+        2xl:py-40 2xl:px-60 2xl:py-20
+        mx-auto
+        grid
+        gap-y-4 gap-x-8
+        grid-cols-11
+        relative
+        bg-gray-100
+      "
+    >
+      <h2 class="text-3xl md:text-4xl font-medium text-center col-span-11">
+        Delightfully simple and deceptively <br />
+        powerful task management
+      </h2>
+      <p class="max-w-lg mx-auto text-center col-span-11 leading-relaxed mb-8">
+        30 million+ people organize billions of tasks in TodoVue for their work,
+        education, and personal life.
+      </p>
+      <div
+        class="
+          border border-slate-200
+          rounded-lg
+          lg:col-span-3
+          col-span-11
+          lg:col-start-2
+          p-8
+          text-center
+          lg:text-left
+          bg-white
+        "
+      >
+        <div
+          class="
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            rounded-full
+            border border-green-100
+            bg-green-50
+            max-md:mx-auto
+            max-sm:mx-auto
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-green-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5h3m-6.75 2.25h10.5a2.25 2.25 0 002.25-2.25v-15a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 4.5v15a2.25 2.25 0 002.25 2.25z"
+            />
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-medium my-4">With you everywhere</h3>
+        <small
+          >Use TodoVue app, extensions and widgets on any device or
+          platform.</small
+        >
+      </div>
+      <div
+        class="
+          border border-slate-200
+          rounded-lg
+          lg:col-span-3
+          col-span-11
+          p-8
+          text-center
+          lg:text-left
+          bg-white
+        "
+      >
+        <div
+          class="
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            rounded-full
+            border border-green-100
+            bg-green-50
+            max-md:mx-auto
+            max-sm:mx-auto
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-green-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+            />
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-medium my-4">Make TodoVue yours</h3>
+        <small
+          >Customize your to-do list with filters, labels, priorities, and more.
+        </small>
+      </div>
+      <div
+        class="
+          border border-slate-200
+          rounded-lg
+          lg:col-span-3
+          col-span-11
+          p-8
+          text-center
+          lg:text-left
+          bg-white
+        "
+      >
+        <div
+          class="
+            flex
+            h-12
+            w-12
+            items-center
+            justify-center
+            rounded-full
+            border border-green-100
+            bg-green-50
+            max-md:mx-auto
+            max-sm:mx-auto
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 text-green-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+            />
+          </svg>
+        </div>
+
+        <h3 class="text-xl font-medium my-4">Secure Database</h3>
+        <small
+          >Thanks to the management with supabase forget about any
+          problem</small
+        >
       </div>
     </section>
   </main>

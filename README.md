@@ -1,5 +1,7 @@
 # todo-app
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/20bb0759-d481-477a-bc3f-bef99174cd01/deploy-status)](https://app.netlify.com/sites/todovue-app/deploys)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
