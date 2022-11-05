@@ -1,4 +1,10 @@
-# todo-app
+# TodoVue
+
+<img
+  src="https://raw.githubusercontent.com/vmedina-rod/todo-app/main/src/assets/logo.webp"
+  alt="TodoVue Logo"
+  title="TodoVue Logo"
+  style="display: inline-block; margin: 0 auto; max-width: 40px">
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/20bb0759-d481-477a-bc3f-bef99174cd01/deploy-status)](https://app.netlify.com/sites/todovue-app/deploys)
 
