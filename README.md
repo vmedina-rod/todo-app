@@ -226,7 +226,7 @@ npm run lint
 
 Basic setup for Vue.js and Supabase:
 
-```
+```sh
 $ npm vite create "my-todo-project"
 $ cd my-todo-project
 $ npm add @supabase/supabase-js
@@ -306,7 +306,7 @@ We’ve provided some starter templates for you to use. You’ll need to expand 
 
 Here is a basic `user` store. We’ve only given you two actions: `fetchUser` and `signUp`. You’ll need to create `signIn` and `signOut`.
 
-```
+```js
 // /store/user.js
 import { defineStore } from "pinia";
 import { supabase } from "../supabase";
@@ -349,7 +349,7 @@ export const useUserStore = defineStore("user", {
 
 Here is a basic `task` store. We’ve only given you one action: `fetchTasks`. You’ll need to create your own store actions to update, create and delete the tasks.
 
-```
+```js
 // /store/task.js
 
 import { defineStore } from 'pinia';
@@ -376,7 +376,7 @@ export const useTaskStore = defineStore('tasks', {
 
 Instead of checking authentication on router change. We’ll be checking it at the root level of the app. This means that the user request is only fired once and not on every page load. Different (especially larger) apps may need a different strategy when dealing with authentication. We’ve provided you with a basic `App.vue` that nests the other pages inside.
 
-```
+```js
 <template>
   <section>
     <router-view class="app-main" /> <!-- your routes will load inside of these tags -->    
